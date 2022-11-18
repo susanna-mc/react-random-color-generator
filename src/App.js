@@ -1,23 +1,46 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import randomColor from 'randomColor';
 
 function App() {
+  const [randomColor, setColor] = useState(''); //What is happening here? Why is inside of square brackets greyed out?
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <br />
+      <h1
+        style={{
+          margin: '0 auto',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        Random Color Generator
+      </h1>
+      <div
+        style={{
+          width: 400,
+          height: 400,
+          margin: '0 auto',
+          display: 'flex',
+          justifyContent: 'center',
+          fontSize: '75',
+        }}
+      >
+        ***placeholder***
+      </div>
+      <button
+        style={{
+          margin: '0 auto',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+        onClick={() => {
+          const newColor = randomColor();
+          setColor(newColor);
+        }}
+      >
+        Generate
+      </button>
     </div>
   );
 }
